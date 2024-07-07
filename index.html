@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MegaMarket</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+      }
+
+      body {
+          background-color: #f4f4f4;
+      }
+
+      .container {
+          width: 80%;
+          margin: 0 auto;
+      }
+
+      header {
+          background-color: #809dc7;
+          color: white;
+          padding: 50px 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative; /* Añadido para posicionar correctamente el logo */
+      }
+
+      header h1 {
+          margin: 0;
+          flex-grow: 1;
+      }
+
+      header img {
+          max-width: 200px; /* Ajustar el tamaño del logo según sea necesario */
+          height: auto;
+          position: absolute; /* Añadido para posicionar el logo */
+          top: 50%;
+          transform: translateY(-50%);
+      }
+
+      nav ul {
+          list-style: none;
+          display: flex;
+          justify-content: flex-end; /* Ajustado para alinear los botones a la derecha */
+          flex-grow: 1;
+      }
+
+      nav ul li {
+          margin: 0 15px;
+      }
+
+      nav ul li a {
+          color: white;
+          text-decoration: none;
+      }
+
+      main {
+          padding: 20px 0;
+      }
+
+      h2 {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .product-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+      }
+
+      .product-card {
+          background-color: white;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          width: 200px;
+          margin: 10px;
+          padding: 10px;
+          text-align: center;
+          position: relative; /* Añadido para posicionar correctamente los botones */
+      }
+
+      .product-card img {
+          max-width: 100%;
+          height: auto;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 10px;
+          margin-bottom: 10px;
+      }
+
+      .product-card h3 {
+          font-size: 1.2em;
+          margin-bottom: 10px;
+      }
+
+      .product-card p {
+          color: #333;
+          font-size: 1em;
+      }
+
+      .product-card button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          margin-top: 10px; /* Separación entre botones */
+      }
+
+      .product-card button:hover {
+          background-color: #0056b3;
+      }
+
+      .product-card .comprar-btn {
+          background-color: #28a745; /* Verde para el botón "Comprar" */
+          margin-top: 5px; /* Ajuste en el margen superior */
+      }
+
+      .product-card .comprar-btn:hover {
+          background-color: #218838; /* Cambio de tono al hacer hover */
+      }
+
+      footer {
+          background-color: #333;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          margin-top: 20px;
+      }
+
+      section {
+          padding: 20px 0;
+      }
+            /* Media Queries para Responsividad */
+            @media screen and (max-width: 1023px) {
+        .container {
+          width: 90%; /* Cambiar el ancho del contenedor para dispositivos medianos */
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .container {
+          width: 100%; /* Ancho completo para dispositivos pequeños (móviles) */
+          padding: 0 10px; /* Añadir padding lateral para evitar bordes cortados */
+        }
+
+        header {
+          padding: 20px 0; /* Reducir el padding del encabezado para dispositivos pequeños */
+        }
+
+        header img {
+          max-width: 150px; /* Reducir tamaño del logo en dispositivos pequeños */
+          position: static; /* Volver a posición estática para el logo en dispositivos pequeños */
+          transform: none;
+          margin-bottom: 10px; /* Espaciado entre logo y título en dispositivos pequeños */
+        }
+
+        nav ul {
+          justify-content: center; /* Centrar los elementos del menú en dispositivos pequeños */
+        }
+
+        .product-card {
+          width: 100%; /* Ancho completo para tarjetas de productos en dispositivos pequeños */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <img src="/Logo-.png" alt="Logo de MegaMarket" />
+        <h2>Bienvenido a MegaMarket</h2>
+      </div>
+    </header>
+    <main>
+      <section id="inicio" class="container">
+        <p><h2>Descubre lo último en tecnología con MegaMarket </h2></p>
+      </section>
+
+      <section id="catalogo" class="container">
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src="/lg.png"
+              alt="Televisor Led Smart 50  4k LG"
+            />
+            <h3>Televisor Led Smart 50" 4k LG 
+              <P>ID MM12345</P>
+            </h3>
+            <p>$350.00</p>
+            <button
+              onclick="agregarAlCarrito('Televisor Led Smart 50 4k LG', 350.00)"
+            >
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('Televisor Led Smart 50 4k LG', 350.00)"
+            >
+              Comprar
+            </button>
+          </div>
+          <div class="product-card">
+            <img
+              src="sankey.png"
+              alt="Televisor Led Smart de 32 HD Sankey"
+            />
+            <h3>Televisor Led Smart de 32" HD Sankey
+              <p>ID CL21430</p>
+            </h3>
+            <p>$100.00</p>
+            <button
+              onclick="agregarAlCarrito('Televisor Led Smart de 32 HD Sankey', 100.00)"
+            >
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('Televisor Led Smart de 32 HD Sankey', 100.00)"
+            >
+              Comprar
+            </button>
+          </div>
+          <div class="product-card">
+            <img src="rca.png" alt="RCA RC75RK TELEVISOR LED SMART 75 4K" />
+            <h3>RCA RC75RK TELEVISOR LED SMART 75" 4K 
+              <P>ID FL76345</P>
+            </h3>
+            <p>$200.50</p>
+            <button onclick="agregarAlCarrito('RCA RC75RK TELEVISOR LED SMART 75 4K', 200.50)">
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('RCA RC75RK TELEVISOR LED SMART 75 4K', 100.00)"
+            >
+              Comprar
+            </button>
+          </div>
+          <div class="product-card">
+            <img src="lenovo.png" alt="Laptop Lenovo Ideapad Gaming 3, 15.6 FHD 4GB" />
+            <h3>Laptop Lenovo Ideapad Gaming 3, 15.6" FHD 4GB
+              <p>ID LK87545</p>
+            </h3>
+            <p>$800.95</p>
+            <button onclick="agregarAlCarrito('Laptop Lenovo Ideapad Gaming 3, 15.6 FHD 4GB', 800.95)">
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('Laptop Lenovo Ideapad Gaming 3, 15.6 FHD 4GB', 100.00)"
+            >
+              Comprar
+            </button>
+
+
+          </div>
+          <div class="product-card">
+            <img src="hp.png" alt="Laptop HP 14 color silver" />
+            <h3>Laptop HP 14 color silver
+              <p>ID TG09462</p>
+            </h3>
+            <p>$355.80</p>
+            <button onclick="agregarAlCarrito('Laptop HP 14 color silver.', 355.80)">
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('Laptop HP 14 color silver', 100.00)"
+            >
+              Comprar
+            </button>
+          </div>
+          <div class="product-card">
+            <img src="asus.png" alt="Laptop Asus VivoBook panatalla 15,6 FHD" />
+            <h3>Laptop Asus VivoBook panatalla 15,6 FHD" 
+            <p>ID ER15047</p></h3>
+            <p>$429.99</p>
+            <button onclick="agregarAlCarrito('Laptop Asus VivoBook panatalla 15,6 FHD', 429.99)">
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('Laptop Asus VivoBook panatalla 15,6 FHD', 100.00)"
+            >
+              Comprar
+            </button>
+          </div><div class="product-card">
+            <img src="huawei.png" alt="HUAWEI Y9A 6.63 6GB 128GB" />
+            <h3>HUAWEI Y9A 6.63" 6GB 128GB
+              <p>ID JK68792</p>
+            </h3>
+            <p>$160.80</p>
+            <button onclick="agregarAlCarrito('HUAWEI Y9A 6.63 6GB 128GB', 160.80)">
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('HUAWEI Y9A 6.63 6GB 128GB', 100.00)"
+            >
+              Comprar
+            </button>
+          </div><div class="product-card">
+            <img src="iphone.png" alt="APPLE IPHONE 13 PRO 6.1 256GB A15 IOS SIERRA BLUE" />
+            <h3>APPLE IPHONE 13 PRO 6.1" 256GB A15 IOS SIERRA BLUE
+              <p>ID VY87456</p>
+            </h3>
+            <p>$499.99</p>
+            <button onclick="agregarAlCarrito('APPLE IPHONE 13 PRO 6.1 256GB A15 IOS SIERRA BLUE', 499.99)">
+              Añadir al Carrito
+            </button>
+            <button
+              class="comprar-btn"
+              onclick="comprarProducto('APPLE IPHONE 13 PRO 6.1 256GB A15 IOS SIERRA BLUE', 100.00)"
+            >
+              Comprar
+            </button>
+          </div><div class="product-card">
+            <img src="samsung.png" alt="SAMSUNG GALAXY S23 BEIGE 8GB RAM 256 ROM" />
+            <h3>SAMSUNG GALAXY S23 BEIGE 8GB RAM 256 ROM
+              <p>ID UH78393</p>
+            </h3>
+            <p>$659.95</p>
+            <button onclick="agregarAlCarrito('SAMSUNG GALAXY S23 BEIGE 8GB RAM 256 ROM', 659.95)">
+              Añadir al Carrito
+            </button>
+            <button
+            class="comprar-btn"
+            onclick="comprarProducto('SAMSUNG GALAXY S23 BEIGE 8GB RAM 256 ROM', 100.00)"
+          >
+            Comprar
+          </button>
+          </div><div class="product-card">
+            <img src="ps5.png" alt="Consola Sony ps5 disco 825Gb Spiderman Slim Versión" />
+            <h3>Consola Sony ps5 disco 825Gb Spiderman Slim Versión
+              <p>ID NB09476</p>
+            </h3>
+            <p>$599.00</p>
+            <button onclick="agregarAlCarrito('Consola Sony ps5 disco 825Gb Spiderman Slim Versión', 599.00)">
+              Añadir al Carrito
+            </button>
+            <button
+            class="comprar-btn"
+            onclick="comprarProducto('Consola Sony ps5 disco 825Gb Spiderman Slim Versión', 100.00)"
+          >
+            Comprar
+          </button>
+          </div><div class="product-card">
+            <img src="sony.png" alt="Audífonos Over Ear Alámbrico Negro" />
+            <h3>Audífonos Sony Over Ear Alámbrico Negro
+              <p>ID OP65345</p>
+            </h3>
+            <p>$12.99</p>
+            <button onclick="agregarAlCarrito('Audífonos Sony Over Ear Alámbrico Negro', 12.99)">
+              Añadir al Carrito
+            </button> <button
+            class="comprar-btn"
+            onclick="comprarProducto('Audífonos Sony Over Ear Alámbrico Negro', 100.00)"
+          >
+            Comprar
+          </button>
+          </div>
+        </div>
+      </section> 
+      </section>
+      <section id="contacto" class="container">
+        <h2>Contacto</h2>
+        <p>
+          Para cualquier consulta, por favor contáctanos con nuestro asistente virtual:
+          <a href="https://webbot.me/f7292c0e3b9acd676c47881fae7da70819fe499f1002bc2ae66515bc3a80b309">MegaMarket.com</a>
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 MegaMarket. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <script>
+      function agregarAlCarrito(nombreProducto, precioProducto) {
+          alert(`Producto "${nombreProducto}" agregado al carrito por $${precioProducto}`);
+      }
+      function comprarProducto(nombreProducto, precioProducto) {
+          alert(`¡Gracias por tu compra de "${nombreProducto}" por $${precioProducto}!`);
+      }
+    </script>
+  </body>
+</html>
